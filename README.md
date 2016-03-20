@@ -1,9 +1,9 @@
 # SwiftyDefaults
 
-[![CI Status](http://img.shields.io/travis/Владимир Конев/SwiftyDefaults.svg?style=flat)](https://travis-ci.org/Владимир Конев/SwiftyDefaults)
-[![Version](https://img.shields.io/cocoapods/v/SwiftyDefaults.svg?style=flat)](http://cocoapods.org/pods/SwiftyDefaults)
-[![License](https://img.shields.io/cocoapods/l/SwiftyDefaults.svg?style=flat)](http://cocoapods.org/pods/SwiftyDefaults)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftyDefaults.svg?style=flat)](http://cocoapods.org/pods/SwiftyDefaults)
+[![CI Status](http://img.shields.io/travis/KoNEW/SwiftyDefaults.svg?style=flat-square)](https://travis-ci.org/KoNEW/SwiftyDefaults)
+[![Version](https://img.shields.io/cocoapods/v/SwiftyDefaults.svg?style=flat-square)](http://cocoapods.org/pods/SwiftyDefaults)
+[![License](https://img.shields.io/cocoapods/l/SwiftyDefaults.svg?style=flat-square)](http://cocoapods.org/pods/SwiftyDefaults)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftyDefaults.svg?style=flat-square)](http://cocoapods.org/pods/SwiftyDefaults)
 
 ## Description
 
