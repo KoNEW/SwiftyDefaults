@@ -59,3 +59,7 @@ SwiftyDefaults is available under the MIT license. See the LICENSE file for more
 ## Original source
 
 Based on fork of [SwiftDefaults](https://github.com/shimesaba9/SwiftDefaults) due to lack of response to Pull Requests
+
+## For contributors
+
+Need help with proper configuration of Travis CI - you are welcome to send pull request. 
