@@ -8,33 +8,45 @@
 
 Pod::Spec.new do |s|
   s.name             = "SwiftyDefaults"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of SwiftyDefaults."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.version          = "1.0.0"
+  s.summary          = "SwiftyDefaults provides accessing to NSUserDefaults using property."
   s.description      = <<-DESC
-                       DESC
+SwiftyDefaults provides accessing to NSUserDefaults using property.
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SwiftyDefaults"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+```swift
+import SwiftyDefaults
+
+class MyDefaults: SwiftyDefaults {
+    dynamic var value1: String? = nil
+    dynamic var value2: String = "Some value"
+    dynamic var value3: Int = 1
+    dynamic var value4: Person? = nil // Person class conforms to NSCoding procotol
+}
+
+let md = MyDefaults()
+
+print("Value1: \(md.value1)") // nil
+print("Value2: \(md.value2)") // "Some value"
+print("Value3: \(md.value3)") // 1
+print("Value4: \(md.value4)") // nil
+
+md.value1 = "Some another value"
+md.value2 = "Some another value 2"
+md.value3 = 10
+md.value4 = Person(firstName: "Elvis", lastName: "Presley", age: 42)
+
+print("Value1: \(md.value1)") // Optional("Some another value")
+print("Value2: \(md.value2)") // "Some an0ther value 2"
+print("Value3: \(md.value3)") // 10
+print("Value4: \(md.value4)") // Optional(Person=(Optional("Elvis"), Optional("Presley"), 42))
+```
+DESC
+
+  s.homepage         = "https://github.com/KoNEW/SwiftyDefaults"
   s.license          = 'MIT'
-  s.author           = { "Владимир Конев" => "konev.vn@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SwiftyDefaults.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.author           = { "Vladimir Konev" => "konev.vn@gmail.com" }
+  s.source           = { :git => "https://github.com/KoNEW/SwiftyDefaults.git", :tag => s.version.to_s }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'SwiftyDefaults' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

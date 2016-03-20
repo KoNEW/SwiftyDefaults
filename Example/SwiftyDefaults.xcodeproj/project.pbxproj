@@ -10,11 +10,13 @@
 		0DF8D4833317AF20D4B3C3BA /* Pods_SwiftyDefaults_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705EAC7AE784BA5EEE81553 /* Pods_SwiftyDefaults_Tests.framework */; };
 		43E64DE2A08A7ED967826518 /* Pods_SwiftyDefaults_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EC19C64C1081EA26B87310 /* Pods_SwiftyDefaults_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		9CC74F371C9F2C2000AD166E /* MyDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC74F341C9F2C2000AD166E /* MyDefaults.swift */; };
+		9CC74F381C9F2C2000AD166E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC74F351C9F2C2000AD166E /* Person.swift */; };
+		9CC74F391C9F2C2000AD166E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC74F361C9F2C2000AD166E /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +34,6 @@
 		607FACD01AFB9204008FA782 /* SwiftyDefaults_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyDefaults_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +43,9 @@
 		674DD10B398B20B23711AFA9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		70096471137B0CE850B38421 /* Pods-SwiftyDefaults_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyDefaults_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyDefaults_Example/Pods-SwiftyDefaults_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		95C522F1D52A7973FF282ED1 /* Pods-SwiftyDefaults_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyDefaults_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyDefaults_Tests/Pods-SwiftyDefaults_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CC74F341C9F2C2000AD166E /* MyDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDefaults.swift; sourceTree = "<group>"; };
+		9CC74F351C9F2C2000AD166E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9CC74F361C9F2C2000AD166E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB6568052C1C32FCB0ECB0D9 /* SwiftyDefaults.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyDefaults.podspec; path = ../SwiftyDefaults.podspec; sourceTree = "<group>"; };
 		CCA7DCA83BBF1D54A8B1DFFE /* Pods-SwiftyDefaults_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyDefaults_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyDefaults_Tests/Pods-SwiftyDefaults_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CCB32F453D0DC38CA0C353DE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				9CC74F361C9F2C2000AD166E /* ViewController.swift */,
+				9CC74F341C9F2C2000AD166E /* MyDefaults.swift */,
+				9CC74F351C9F2C2000AD166E /* Person.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -359,8 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				9CC74F381C9F2C2000AD166E /* Person.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				9CC74F391C9F2C2000AD166E /* ViewController.swift in Sources */,
+				9CC74F371C9F2C2000AD166E /* MyDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
