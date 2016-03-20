@@ -1,6 +1,0 @@
-framework module SwiftyDefaults {
-  umbrella header "SwiftyDefaults-umbrella.h"
-
-  export *
-  module * { export * }
-}
