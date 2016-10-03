@@ -1,7 +1,7 @@
 import Foundation
 
-public class SwiftyDefaults: NSObject {
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+open class SwiftyDefaults: NSObject {
+    let userDefaults = UserDefaults.standard
     
     public override init() {
         super.init()
@@ -17,12 +17,12 @@ public class SwiftyDefaults: NSObject {
 }
 
 extension SwiftyDefaults {
-    override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let keyPath = keyPath {
-            if let value = change?["new"] where !(value is NSNull) {
-                userDefaults.setObject(value is NSCoding ? NSKeyedArchiver.archivedDataWithRootObject(value) : value, forKey: storeKey(keyPath))
+            if let value = change?[.newKey] , !(value is NSNull) {
+                userDefaults.set(value is NSCoding ? NSKeyedArchiver.archivedData(withRootObject: value) : value, forKey: storeKey(keyPath))
             }else{
-                userDefaults.removeObjectForKey(storeKey(keyPath))
+                userDefaults.removeObject(forKey: storeKey(keyPath))
             }
             
             userDefaults.synchronize()
@@ -31,22 +31,25 @@ extension SwiftyDefaults {
 }
 
 extension SwiftyDefaults {
-    private func storeKey(propertyName: String) -> String{
-        return "\(self.dynamicType)_\(propertyName)"
+    fileprivate func storeKey(_ propertyName: String) -> String{
+        return "\(type(of: self))_\(propertyName)"
     }
     
-    private func registerDefaults() {
-        let dic = propertyNames.reduce([String:AnyObject]()) { (var dic, key) -> [String:AnyObject] in
-            dic[storeKey(key)] = valueForKey(key)
+    fileprivate func registerDefaults() {
+        // TODO: Check if "Any" is correct type
+        // If it's not use dic[storeKey(key)] = value(forKey: key) as AnyObject?
+        let dic = propertyNames.reduce([String:Any]()) { (dic, key) -> [String:Any] in
+            var dic = dic
+            dic[storeKey(key)] = value(forKey: key)
             return dic
         }
-        userDefaults.registerDefaults(dic)
+        userDefaults.register(defaults: dic)
     }
     
-    private func setupProperty() {
+    fileprivate func setupProperty() {
         propertyNames.forEach {
-            let value = userDefaults.objectForKey(storeKey($0))
-            if let data = value as? NSData, decodedValue = NSKeyedUnarchiver.unarchiveObjectWithData(data){
+            let value = userDefaults.object(forKey: storeKey($0))
+            if let data = value as? Data, let decodedValue = NSKeyedUnarchiver.unarchiveObject(with: data){
                 setValue(decodedValue, forKey: $0)
             }else{
                 setValue(value, forKey: $0)
@@ -54,21 +57,19 @@ extension SwiftyDefaults {
         }
     }
     
-    private func addObserver() {
+    fileprivate func addObserver() {
         propertyNames.forEach {
-            addObserver(self, forKeyPath: $0, options: .New, context: nil)
+            addObserver(self, forKeyPath: $0, options: .new, context: nil)
         }
     }
     
-    private func removeObserver() {
+    fileprivate func removeObserver() {
         propertyNames.forEach {
             removeObserver(self, forKeyPath: $0)
         }
     }
     
-    private var propertyNames: [String] {
+    fileprivate var propertyNames: [String] {
         return Mirror(reflecting: self).children.flatMap { $0.label }
     }
 }
-
-
